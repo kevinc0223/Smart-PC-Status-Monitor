@@ -23,7 +23,7 @@ int values[4]; // an array to store the 4 stat
 
 void loop() 
 {
-   Serial.println(values[3]);
+   
    String inputString = " $10 $60 $10 $10";//the imported 4 values with symbol in between in between
    Sharer.run();
   Sharer.read();
@@ -68,6 +68,8 @@ void loop()
   int num2 = values[1];
   int num3 = values[2];
   int num4 = values[3]; 
+
+  Serial.println(values[3]); //send GPU temp data to twilio for notifications
 
   // Set cursor to blink if num > 90
   while (num1 > 90 || num2 > 50 || num3 > 90 || num4 > 50) {
